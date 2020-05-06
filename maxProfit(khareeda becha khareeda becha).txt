@@ -1,0 +1,17 @@
+#include <bits/stdc++.h> 
+using namespace std; 
+ 
+int main() 
+{ 	
+	vector<int>v{7,1,5,3,6,4};
+	int maxPr=0;
+	//khareeda becha khareeda becha
+	for(int i=1;i<v.size();++i){
+		maxPr+=max(0,v[i] - v[i - 1]);
+	}
+	cout<<maxPr;
+	
+	return 0; 
+} 
+
+// This code is contributed by Code_Mech 

@@ -1,0 +1,32 @@
+#include <bits/stdc++.h> 
+using namespace std;
+int val(char roman){
+	switch(roman){
+		case'I':return 1;
+		case'V':return 5;
+		case'X':return 10;
+		case'L':return 50;
+		case'C':return 100;
+		case'D':return 500;
+		case'M':return 1000;
+	}
+	return 0;
+}
+int roman_to_int(string str){
+	int i,n,ans=0,p;
+	n=str.length()-1;
+	for(i=n;i>=0;--i){
+		if(val(str[i])>=p){
+			ans+=val(str[i]);
+		}
+		else ans-=val(str[i]);
+		p=val(str[i]);
+	}
+	return ans;
+}
+int main(){
+	string str="III";
+	int r=roman_to_int(str);
+	cout<<r;
+return 0;
+}

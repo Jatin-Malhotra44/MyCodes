@@ -1,0 +1,18 @@
+#include <bits/stdc++.h> 
+using namespace std; 
+ 
+int main() 
+{ 
+	vector<int>v{7,5,6,9,1};
+	int maxPr=INT_MIN;
+	int buy=v[0];
+	for(int i=0;i<v.size();++i){
+		if(v[i]<buy) buy=v[i];
+		maxPr=max(maxPr,v[i]-buy);
+	}
+	cout<<maxPr;
+	
+	return 0; 
+} 
+
+// This code is contributed by Code_Mech 

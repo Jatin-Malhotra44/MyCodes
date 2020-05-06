@@ -1,0 +1,24 @@
+#include <bits/stdc++.h> 
+using namespace std; 
+bool checkPal(string str){
+	int l=0,h=str.length();
+	while(l<=h){
+		if(!(str[l]>='a'&&str[l]<='z'))
+			l++;
+		else if(!(str[h]>='a'&&str[h]<='z'))
+			h--;
+		else if(str[l]==str[h]){
+			l++; h--;
+		}
+		else return false;
+	}
+	return true;
+}
+
+int main() 
+{ 
+    string str = "race a car";
+    if(checkPal(str))cout<<"TRUE";
+	else cout<<"FALSE"; 
+	return 0; 
+}  

@@ -1,0 +1,22 @@
+#include<bits/stdc++.h> 
+using namespace std; 
+class solution{
+	public:
+		int char2num(char c){
+			return c-'A'+1;
+		}
+		int title2num(string s){
+			unsigned long mult=1;
+			int total=0;
+			for(int i=s.size()-1;i>=0;i--){
+				total+=mult*char2num(s[i]);
+				mult*=26;
+			}
+			return total;
+			}
+		};
+int main(){
+	solution s;
+	cout<<s.title2num("AB");
+	return 0;
+}

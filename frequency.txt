@@ -1,0 +1,20 @@
+#include <bits/stdc++.h> 
+using namespace std; 
+void freq(vector<int>v){
+	map<int,int>m;
+	for(int i=0;i<v.size();++i){
+		if(m.find(v[i])==m.end()){
+			m.insert(make_pair(v[i],1));
+		}
+		else m[v[i]]++;
+	}
+	for(auto& it:m){
+		if(it.second==1)
+		cout<<it.first;
+	}
+}
+int main(){
+	vector<int>v{1,1,2,2,3,1,4,4,4,4,4};
+	freq(v);
+	return 0;
+}

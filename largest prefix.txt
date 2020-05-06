@@ -1,0 +1,30 @@
+#include<bits/stdc++.h> 
+using namespace std; 
+
+string stringComp(string s1,string s2){
+	string st;
+	int n1=s1.length(),n2=s2.length();
+	int i=0,j=0;
+	for(i=0,j=0;i<n1&&j<n2;i++,j++){
+		if(s1[i]!=s2[j]) break;
+		st.push_back(s1[i]);
+	}
+	return st;	
+}
+string commonPrefix(string arr[],int n){
+	string prefix=arr[0];
+	for(int i=1;i<n;++i)
+		prefix=stringComp(prefix,arr[i]);
+	return prefix;
+	
+}
+
+
+int main() 
+{ 	
+	string arr[] = {"apple", "app", "apun", "apa"}; 
+    int n = sizeof(arr) / sizeof(arr[0]); 
+	string ans=commonPrefix(arr,n);
+	cout<<ans; 
+    return (0); 
+} 

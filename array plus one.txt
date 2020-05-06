@@ -1,0 +1,33 @@
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+void plusOne(vector<int> &v){
+	int n=v.size();
+	v[n-1]+=1;
+	int carry=v[n-1]/10;
+	v[n-1]=v[n-1]%10;
+	
+	for(int i=n-2;i>=0;i--){
+		if(carry==1){
+		
+		v[i]+=1;
+		carry=v[i]/10;
+		v[i]=v[i]%10;
+		}
+}
+	if(carry==1)
+	v.insert(v.begin(),1);
+	
+	
+}
+int main() 
+{ 
+    vector<int> vect{9, 9, 9, 9}; 
+  
+    plusOne(vect); 
+  
+    for (int i=0; i<vect.size(); i++) 
+       cout << vect[i] << " "; 
+  
+    return 0; 
+}  
